@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="18dp"
+              android:paddingRight="18dp">
+
+    <ImageView
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="65dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/login_logo"/>
+
+
+
+    <LinearLayout
+            android:id="@+id/llUserName"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:id="@+id/ivUserName"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/login_user_normal"/>
+
+        <EditText
+                android:id="@+id/etUserName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:hint="登录用户名"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/llPassword"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:id="@+id/ivPassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/login_password_normal"/>
+
+        <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:hint="登录密码"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+
+    <Button
+            android:id="@+id/btnLogin"
+            android:background="@drawable/btn_login_bg"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="23dp"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:text="登  录"/>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--&lt;!&ndash; gray scale &ndash;&gt;-->
+    <!--<color name="white"     >#FFFFFF</color>-->
+    <!--<color name="gray_light">#DBDBDB</color>-->
+    <!--<color name="gray"      >#939393</color>-->
+    <!--<color name="gray_dark" >#5F5F5F</color>-->
+    <!--<color name="black"     >#323232</color>-->
+
+    <!--&lt;!&ndash; basic colors &ndash;&gt;-->
+    <!--<color name="green">#27D34D</color>-->
+    <!--<color name="blue">#2A91BD</color>-->
+    <!--<color name="orange">#FF9D2F</color>-->
+    <!--<color name="red">#FF432F</color>-->
+    <color name="gray">#f0eff3</color>
+    <color name="orange">#ffb22d</color>
+    <color name="green">#08c29d</color>
+</resources>

@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!--5dp   actionbar按钮内边距-->
+    <!--7dp   输入框与按钮间距  item内边距-->
+    <!--8dp   成员item内边距-->
+    <!--10dp  图片间距 输入框内边距 标签与输入框间距-->
+    <!--12dp  输入框item内边距  item内字体间距-->
+    <!--13dp  提交按钮边距  跟进人按钮外边距 图片与姓名间距-->
+    <!--14dp-->
+    <!--15dp  item内边距 按钮外边距 label内边距 标题外边距 item间距 提示框内边距 提示框按钮内边距-->
+    <!--20dp  提交按钮外边距 输入框外边距-->
+    <!--23dp  按钮内边距-->
+    <!--22dp  选择框item内边距-->
+
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_normal">15dp</dimen>
+    <dimen name="spacing_large">30dp</dimen>
+
+    <!--&lt;!&ndash; typical spacing between two views &ndash;&gt;-->
+    <!--<dimen name="spacing_tiny">5dp</dimen>-->
+    <!--<dimen name="spacing_small">10dp</dimen>-->
+    <!--<dimen name="spacing_normal">15dp</dimen>-->
+    <!--<dimen name="spacing_large">22dp</dimen>-->
+    <!--<dimen name="spacing_huge">40dp</dimen>-->
+
+
+    <!--18sp actionbar标题-->
+    <!--16sp 标签文本-->
+    <!--14sp 内容文本-->
+    <!--12sp 提示文本-->
+    <!--&lt;!&ndash; typical text size &ndash;&gt;-->
+    <!--<dimen name="text_size_small">12sp</dimen>-->
+    <!--<dimen name="text_size_normal">16sp</dimen>-->
+    <!--<dimen name="text_size_large">18sp</dimen>-->
+
+    <!--&lt;!&ndash; typical width and height of button &ndash;&gt;-->
+    <!--<dimen name="button_width_short">25dp</dimen>-->
+    <!--<dimen name="button_width_normal">34dp</dimen>-->
+    <!--<dimen name="button_width_tall">45dp</dimen>-->
+    <!--<dimen name="button_height_short">25dp</dimen>-->
+    <!--<dimen name="button_height_normal">34dp</dimen>-->
+    <!--<dimen name="button_height_tall">45dp</dimen>-->
+
+    <!--&lt;!&ndash; typical width and height of text view &ndash;&gt;-->
+    <!--<dimen name="text_view_width_short">25dp</dimen>-->
+    <!--<dimen name="text_view_width_normal">34dp</dimen>-->
+    <!--<dimen name="text_view_width_tall">45dp</dimen>-->
+    <!--<dimen name="text_view_height_short">25dp</dimen>-->
+    <!--<dimen name="text_view_height_normal">34dp</dimen>-->
+    <!--<dimen name="text_view_height_tall">45dp</dimen>-->
+
+    <!--&lt;!&ndash; typical width and height of edit text &ndash;&gt;-->
+    <!--<dimen name="edit_text_width_short">25dp</dimen>-->
+    <!--<dimen name="edit_text_width_normal">34dp</dimen>-->
+    <!--<dimen name="edit_text_width_tall">45dp</dimen>-->
+    <!--<dimen name="edit_text_height_short">25dp</dimen>-->
+    <!--<dimen name="edit_text_height_normal">34dp</dimen>-->
+    <!--<dimen name="edit_text_height_tall">45dp</dimen>-->
+
+    <!--&lt;!&ndash; typical image view size &ndash;&gt;-->
+    <!--<dimen name="image_view_size_mini">20dp</dimen>-->
+    <!--<dimen name="image_view_size_small">34dp</dimen>-->
+    <!--<dimen name="image_view_size_normal">50dp</dimen>-->
+    <!--<dimen name="image_view_size_large">75dp</dimen>-->
+    <!--<dimen name="image_view_size_huge">100dp</dimen>-->
+
+</resources>

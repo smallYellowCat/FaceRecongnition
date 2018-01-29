@@ -14,21 +14,21 @@
             android:background="@drawable/item_view"
             android:baselineAligned="false">
         <include
-                android:id="@+id/tvTakePhoto"
+                android:id="@+id/tvFace"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 layout="@layout/include_tab_item"
         />
         <include
-                android:id="@+id/tvFile"
+                android:id="@+id/tvUserManager"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 layout="@layout/include_tab_item"
         />
         <include
-                android:id="@+id/tvThread"
+                android:id="@+id/tvSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"

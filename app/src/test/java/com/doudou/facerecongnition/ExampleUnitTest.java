@@ -1,8 +1,13 @@
 package com.doudou.facerecongnition;
 
+import android.app.Application;
+import android.content.Context;
+import android.test.mock.MockContext;
 import com.alibaba.fastjson.JSONObject;
 import com.doudou.facerecongnition.entity.User;
 import com.doudou.facerecongnition.util.MyHttpUtil;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -38,5 +43,12 @@ public class ExampleUnitTest {
         JSONObject json = MyHttpUtil.post("http://101.132.147.167:8080/ljj/back/systemManager/loginVerify",
                 params);
         System.out.println(json);
+    }
+
+    @Test
+    public void testFaceRegister(){
+        Context context = new MockContext();
+        SpeechUtility.createUtility(context, SpeechConstant.APPID + "=5a6d4848");
+
     }
 }

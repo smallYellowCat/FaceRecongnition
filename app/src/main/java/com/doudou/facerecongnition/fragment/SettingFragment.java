@@ -1,4 +1,11 @@
 package com.doudou.facerecongnition.fragment;
 
-public class SettingFragment {
+import android.support.v4.app.Fragment;
+import android.view.View;
+
+public class SettingFragment extends Fragment implements View.OnClickListener {
+    @Override
+    public void onClick(View v) {
+
+    }
 }

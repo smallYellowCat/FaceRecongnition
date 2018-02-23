@@ -1,6 +1,7 @@
 package com.doudou.facerecongnition.activity;
 
 import android.app.NotificationManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
@@ -14,9 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.doudou.facerecongnition.R;
 import com.doudou.facerecongnition.adapter.MyFragmentPageAdapter;
+import com.doudou.facerecongnition.constant.GlobalVar;
 import com.doudou.facerecongnition.fragment.FaceIdentifyFragment;
 import com.doudou.facerecongnition.fragment.SettingFragment;
 import com.doudou.facerecongnition.fragment.UserManagerFragment;
+import com.doudou.facerecongnition.util.XFUtil;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 
 import java.util.ArrayList;
 
@@ -34,10 +39,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
 
     private ViewPager mViewpager;
-    private int tabImageRes[] = {R.drawable.sel_menu_assigned, R.drawable.sel_menu_customer_manager,
+    private int tabImageRes[] = {R.drawable.sel_menu_customer_manager, R.drawable.sel_menu_assigned,
             R.drawable.sel_menu_address};
 
-    private String tabText[] = {"识别", "管理", "设置"};
+    private String tabText[] = {"管理", "识别", "设置"};
 
     private ArrayList<TextView> mTvTabItems = new ArrayList<>();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initview();
+
 
     }
 
@@ -205,4 +211,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         tvUserManager.setTextColor(Color.parseColor("#7a7b83"));
         tvSetting.setTextColor(Color.parseColor("#7a7b83"));
     }
+
+
 }

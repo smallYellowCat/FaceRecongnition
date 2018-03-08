@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--柳博程 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="#ffb22d" />
+            <corners android:radius="5dp" />
+            <stroke android:width="0.5dp" android:color="#e07507"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#e69a2d" />
+            <corners android:radius="5dp" />
+            <stroke android:width="0.5dp" android:color="#e07507"/>
+        </shape>
+    </item>
+</selector>

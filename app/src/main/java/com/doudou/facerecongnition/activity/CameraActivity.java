@@ -5,12 +5,13 @@ import android.graphics.*;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,8 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     private User user = new User();
     /**身份验证对象*/
     private static  IdentityVerifier mIdVerifier;
+    private final String TAG = "CameraActivity.class";
+    private boolean flag  = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -105,12 +108,6 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        /*释放相机资源*/
-
-    }
 
     private void getPreViewImage() {
 
@@ -155,8 +152,10 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
 
         //**注册*/
         user.setImageData(Base64Util.bitmapToBytes(nbmp2));
-        user.setAuthId("123456");
-        xfUtil.enroll(user);
+        user.setAuthId("123457");
+        if (flag && user.getImageData().length > 10){
+            //enroll(user);
+        }
 
     }
 
@@ -165,10 +164,42 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_capture:
-                getPreViewImage();
+                //getPreViewImage();
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
                 Toast.makeText(CameraActivity.this, "抓取一帧图像！", Toast.LENGTH_LONG).show();
+                mCamera.setPreviewCallback(null);
                 break;
             default: break;
         }
     }
+
+
+
+    Handler handler = new Handler(){
+        public void handleMessage(android.os.Message msg) {
+            switch(msg.what){
+
+                case 1:
+                    if(flag){
+                        getPreViewImage();
+                        //btnGetBuffer.setText("开始图片1");
+                        handler.sendEmptyMessageDelayed(1, 30000);
+
+                    }else{
+                        mCamera.setPreviewCallback(null);
+                    }
+                    break;
+                case 2:
+                    mCamera.setPreviewCallback(null);
+                    handler.sendEmptyMessageDelayed(2, 5000);
+                    break ;
+
+
+            }
+
+        };
+    };
+
 }

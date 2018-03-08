@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-    <SurfaceView
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:id="@+id/photo"
+                android:layout_height="match_parent"
+              android:background="#fcfdfc"
+              android:orientation="vertical">
 
+    <ListView android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:id="@+id/list"
+              android:layout_margin="16dp"
     />
 
-    <Button android:layout_width="match_parent" android:layout_height="46dp"
-            android:id="@+id/open_camera" android:background="@drawable/btn_login_bg"
-            android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_marginBottom="34dp"
-            android:textSize="16sp" android:textColor="#FFFFFF" android:text="扫描"
-            android:onClick="openCamera"
-    />
 
-    <ProgressBar android:layout_width="match_parent" android:layout_height="400dp"/>
-    <ProgressBar android:layout_width="200dp" android:layout_height="300dp"
-                 android:layout_marginTop="48dp" android:layout_alignParentTop="true"
-                 android:layout_centerHorizontal="true" android:id="@+id/progressBar"/>
-    <ProgressBar android:layout_width="50dp" android:layout_height="100dp" android:layout_alignBottom="@+id/progressBar"
-                 android:layout_centerHorizontal="true" android:layout_marginBottom="95dp"/>
-
-</RelativeLayout>
+</LinearLayout>

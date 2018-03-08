@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="50dp"
+                  android:orientation="horizontal"
+                  android:padding="10dp"
+                  android:weightSum="1">
+        <TextView android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:textSize="16sp"
+                  android:text="学号："
+                  android:hint="请输入学号"
+                  android:gravity="center_horizontal|center_vertical"
+                  android:layout_weight="0.2"
+        />
+        <EditText android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="0.8"
+                  android:id="@+id/id"
+        />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="80dp"
+                  android:orientation="horizontal"
+                  android:padding="10dp"
+                  android:weightSum="1">
+        <ImageView android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:gravity="center_horizontal|center_vertical"
+                  android:layout_weight="0.7"
+                  android:id="@+id/face"
+        />
+        <Button android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="0.3"
+                  android:id="@+id/bt"
+                  android:text="拍照"
+                  android:textSize="16sp"
+                  android:background="@drawable/btn_login_bg"
+        />
+    </LinearLayout>
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_login_bg"
+            android:layout_marginTop="32dp"
+            android:text="注册"
+            android:textSize="24sp"
+            android:id="@+id/register"
+    />
+
+</LinearLayout>

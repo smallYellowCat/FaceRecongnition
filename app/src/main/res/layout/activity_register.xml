@@ -2,6 +2,175 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:padding="@dimen/spacing_small">
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/login_user_normal"/>
+
+        <EditText
+                android:id="@+id/etUserName"
+                android:hint="用户名"
+                android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                android:maxLength="16"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/name"/>
+
+        <EditText
+                android:id="@+id/etFullName"
+                android:hint="真实姓名"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/phone"/>
+
+        <EditText
+                android:id="@+id/etPhone"
+                android:hint="联系电话"
+                android:maxLength="16"
+                android:inputType="phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:id="@+id/ivPassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/login_password_normal"/>
+
+
+        <Button
+                android:id="@+id/btnShowPassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/password_show"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"/>
+
+        <EditText
+                android:id="@+id/etPassword"
+                android:maxLength="16"
+                android:inputType="textPassword"
+                android:hint="密码"
+                android:layout_toRightOf="@id/ivPassword"
+                android:layout_toLeftOf="@id/btnShowPassword"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_login_normal"
+            android:padding="5dp">
+
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/login_team_name_normal"/>
+
+        <EditText
+                android:hint="邀请码，4位"
+                android:id="@+id/etTeamName"
+                android:maxLength="16"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:textColorHint="#a3a3a3"
+                android:textColor="#7a7b83"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+    <Button
+            android:text="注  册"
+            android:textSize="18sp"
+            android:id="@+id/btnRegister"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_orange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

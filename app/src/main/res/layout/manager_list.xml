@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#c9dacd"
+>
+    <TextView android:layout_width="150dp"
+              android:layout_height="40dp"
+              android:id="@+id/KTName"
+              android:textSize="16sp"
+
+              android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:id="@+id/detail"
+              android:text="详情"
+              android:textSize="18sp"
+              android:textColor="#08ea1f"
+              android:layout_toRightOf="@id/KTName"
+              android:gravity="center_vertical|center_horizontal"
+              android:layout_marginLeft="66dp"
+
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:id="@+id/delete"
+              android:text="删除"
+              android:textSize="18sp"
+              android:textColor="#08ea1f"
+              android:layout_toRightOf="@id/detail"
+              android:gravity="center_vertical|center_horizontal"
+              android:layout_marginLeft="20dp"
+
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/startTime"
+              android:layout_below="@id/KTName"
+              android:layout_marginLeft="36dp"
+
+    />
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/endTime"
+              android:layout_below="@id/KTName"
+              android:layout_alignParentRight="true"
+              android:layout_marginRight="36dp"
+
+    />
+
+</RelativeLayout>

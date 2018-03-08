@@ -86,5 +86,12 @@
             android:textSize="18sp"
             android:textColor="#FFFFFF"
             android:text="登  录"/>
+    <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="注册"
+            android:textColor="#00C39C"/>
 
 </LinearLayout>

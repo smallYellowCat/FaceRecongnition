@@ -1,43 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                  android:orientation="vertical" android:layout_alignParentTop="true"
-                  android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                  android:background="#f5f7f9"
-    >
-        <LinearLayout android:layout_width="match_parent" android:layout_height="100dp"
-                      android:orientation="horizontal" android:background="#d9dde4"
-                      android:layout_marginTop="10dp"
-        >
-            <ImageView android:layout_width="80dp" android:layout_height="80dp"
-                       android:id="@+id/manager_photo" android:layout_marginTop="10dp"
-                       android:src="@drawable/login_logo"
-            />
-            <TextView android:layout_width="wrap_content" android:layout_height="40dp"
-                      android:id="@+id/account" android:layout_marginTop="30dp" android:gravity="center_vertical"
-                      android:text="2296320014" android:textSize="24sp"
-            />
+<!--柳博程 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
-                      android:layout_marginTop="16dp" android:orientation="horizontal"
-        >
-            <ImageView android:layout_width="60dp" android:layout_height="60dp"
-                       android:background="@drawable/btn_login_bg"
+        <RelativeLayout
+                android:id="@+id/rlChangeHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/item_view"
+                android:paddingBottom="7dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="7dp">
+
+            <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivHead"
+                    android:text="头像"/>
+
+            <ImageView
+                    android:id="@+id/ivHead"
+                    android:layout_width="63dp"
+                    android:layout_height="63dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/iv_head_null"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/item_view">
+
+            <TextView
+                    android:id="@+id/tv_user_name"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="用户名"/>
+
+            <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23dp"
+                    android:layout_toRightOf="@+id/tv_user_name"
+                    android:gravity="right"
+                    android:text="zhangsan"
+                    android:textColor="#7a7b83"
+                    android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlChangeFullName"
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_view_no_stroke">
+
+            <TextView
+                    android:id="@+id/tv_full_name"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="姓名"/>
+
+            <TextView
+                    android:id="@+id/tvFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/enterUserName"
+                    android:layout_toRightOf="@+id/tv_full_name"
+                    android:gravity="right"
+                    android:text="张三"
+                    android:textColor="#7a7b83"
+                    android:textSize="14sp"/>
+
+            <ImageView
+                    android:id="@+id/enterUserName"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_more"
             />
-            <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
-                      android:text="我的课堂" android:textSize="16sp" android:gravity="center_vertical"
-                      android:layout_marginLeft="16dp"
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlChangePhone"
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_view">
+
+            <TextView
+                    android:id="@+id/tv_phone"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="联系电话"/>
+
+            <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/enterPhone"
+                    android:layout_toRightOf="@+id/tv_phone"
+                    android:gravity="right"
+                    android:text="13512341234"
+                    android:textColor="#7a7b83"
+                    android:textSize="14sp"/>
+
+            <ImageView
+                    android:id="@+id/enterPhone"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_more"
             />
-            <ImageButton android:layout_width="60dp" android:layout_height="60dp"
-                         android:src="@drawable/button_back" android:layout_marginLeft="140dp"/>
-        </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlChangeDepartment"
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_view_no_stroke">
+
+            <TextView
+                    android:id="@+id/tv_department"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="部门"/>
+
+            <TextView
+                    android:id="@+id/tvDepartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/enterDepartment"
+                    android:layout_toRightOf="@+id/tv_department"
+                    android:gravity="right"
+                    android:text="杭电电子学院"
+                    android:textColor="#7a7b83"
+                    android:textSize="14sp"/>
+
+            <ImageView
+                    android:id="@+id/enterDepartment"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_more"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlChangeJob"
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_view">
+
+            <TextView
+                    android:id="@+id/tv_job"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="职务"/>
+
+            <TextView
+                    android:id="@+id/tvJob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/enterJob"
+                    android:layout_toRightOf="@+id/tv_job"
+                    android:gravity="right"
+                    android:text="老师"
+                    android:textColor="#7a7b83"
+                    android:textSize="14sp"/>
+
+            <ImageView
+                    android:id="@+id/enterJob"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_more"
+            />
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlChangePassword"
+                style="@style/ItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/item_view">
+
+            <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="修改密码"/>
+
+            <ImageView
+                    android:id="@+id/enterChangePassword"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_more"
+            />
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_white"
+                android:text="退出登录"
+                android:textColor="#F46935"
+                android:textSize="18sp"/>
+
     </LinearLayout>
-
-
-
-</RelativeLayout>
+</ScrollView>

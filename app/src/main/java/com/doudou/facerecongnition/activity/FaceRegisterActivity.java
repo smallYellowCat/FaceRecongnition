@@ -12,13 +12,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.doudou.facerecongnition.R;
-import com.doudou.facerecongnition.entity.User;
 import com.doudou.facerecongnition.util.Base64Util;
 import com.iflytek.cloud.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class FaceRegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class FaceRegisterActivity extends BaseActivity implements View.OnClickListener {
 
     /**身份验证对象*/
     private static  IdentityVerifier mIdVerifier;
@@ -27,25 +26,30 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
     private ImageView face;
     private String authId;
     private Button button;
-    private User user;
+    private Button register;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_face_register);
+
+        initActionBar();
         Intent intent = getIntent();
 
         button = (Button) findViewById(R.id.bt);
         id = (EditText) findViewById(R.id.id);
         face = (ImageView) findViewById(R.id.face);
+        register = (Button) findViewById(R.id.register);
 
-        user = new User();
+        /*user = new User();*/
 
         button.setOnClickListener(this);
+        register.setOnClickListener(this);
+        
         authId = intent.getStringExtra("ClassId");
 
-        mIdVerifier = IdentityVerifier.createVerifier(FaceRegisterActivity.this, new InitListener() {
+        /*mIdVerifier = IdentityVerifier.createVerifier(FaceRegisterActivity.this, new InitListener() {
             @Override
             public void onInit(int errorCode) {
                 if (ErrorCode.SUCCESS == errorCode) {
@@ -55,7 +59,7 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
                 }
             }
         });
-
+*/
 
     }
 
@@ -96,12 +100,12 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
     };
 
 
-    /**
+   /* *//**
      * register face information
-     * @param user 待注册用户
      * @return 成功：true， 失败：false
-     */
-    public  boolean enroll(User user){
+     *//*
+
+      public boolean enroll(User user){
         boolean result = false;
 
         // 清空参数
@@ -120,7 +124,7 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
         mIdVerifier.writeData("ifr", params.toString(), user.getImageData(), 0, user.getImageData().length );
         mIdVerifier.stopWrite("ifr");
         return result;
-    }
+    }*/
 
 
 
@@ -128,7 +132,7 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+       /* switch (v.getId()){
             case R.id.bt:
                 //点击了拍照按钮
                 if (id.getText().toString() == null || id.getText().toString().length() != 4){
@@ -144,10 +148,11 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.register:
                 //点击注册按钮
+                Toast.makeText(FaceRegisterActivity.this, "ddd", Toast.LENGTH_LONG).show();
                 enroll(user);
                 break;
 
-        }
+        }*/
 
     }
 
@@ -158,7 +163,7 @@ public class FaceRegisterActivity extends AppCompatActivity implements View.OnCl
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             face.setImageBitmap(imageBitmap);
-            user.setImageData(Base64Util.bitmapToBytes(imageBitmap));
+            /*user.setImageData(Base64Util.bitmapToBytes(imageBitmap));*/
         }
     }
 }

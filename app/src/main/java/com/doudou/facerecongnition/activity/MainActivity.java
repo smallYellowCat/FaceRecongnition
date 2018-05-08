@@ -2,20 +2,26 @@ package com.doudou.facerecongnition.activity;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 import com.doudou.facerecongnition.R;
 import com.doudou.facerecongnition.adapter.MyFragmentPageAdapter;
 import com.doudou.facerecongnition.constant.GlobalVar;
+import com.doudou.facerecongnition.entity.Teacher;
 import com.doudou.facerecongnition.fragment.FaceIdentifyFragment;
 import com.doudou.facerecongnition.fragment.SettingFragment;
 import com.doudou.facerecongnition.fragment.UserManagerFragment;
@@ -30,13 +36,11 @@ import java.util.ArrayList;
 *@author 豆豆
 *时间:
 */
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private static final String TAG = "MainActivity";
 
-
     private NotificationManager notificationManager;//通知栏管理类
-
 
     private ViewPager mViewpager;
     private int tabImageRes[] = {R.drawable.sel_menu_customer_manager, R.drawable.sel_menu_assigned,
@@ -57,22 +61,33 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     TextView tvUserManager;
     TextView tvSetting;
 
+    Button btnManager;
+    Button btnUser;
+    Button btnSetting;
 
+    Teacher teacher;
 
     private int currentItem=0;
     private int lasItem;
 
-
     private long existTime = 0;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        teacher = getManagerInfo(getIntent());
         initview();
+    }
 
+    private Teacher getManagerInfo(Intent intent){
+        return (Teacher) intent.getSerializableExtra("teacher");
+    }
 
+    private void transferObjectToFragment(Fragment fragment){
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("teacher", teacher);
+        fragment.setArguments(bundle);
     }
 
     @Override
@@ -83,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 existTime = System.currentTimeMillis();
             } else {
                 notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                finish();
+                //finish();
                 System.exit(0);
             }
             return true;
@@ -92,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void initview() {
+        initActionBar();
         tvFace = (TextView) findViewById(R.id.tvFace);
         tvUserManager = (TextView) findViewById(R.id.tvUserManager);
         tvSetting = (TextView) findViewById(R.id.tvSetting);
@@ -140,6 +156,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         faceFrg = new FaceIdentifyFragment();
         setFrg = new SettingFragment();
 
+        transferObjectToFragment(userFrg);
+        transferObjectToFragment(faceFrg);
+        transferObjectToFragment(setFrg);
+
         mFragments.add(userFrg);
         mFragments.add(faceFrg);
         mFragments.add(setFrg);
@@ -153,9 +173,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mViewpager.setOffscreenPageLimit(3);
         switchFragment(0);
 
-
-
-
     }
 
     /**
@@ -167,12 +184,24 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         clearSelection();
         switch (index) {
             case 0:
+                this.setActionBarTitle("管理");
+                this.hideButtonBack();
+                this.hideButtonRight();
+                this.hideButtonCenter();
                 tvFace.setTextColor(Color.parseColor("#08c29d"));
                 break;
             case 1:
+                this.setActionBarTitle("识别");
+                this.hideButtonBack();
+                this.hideButtonRight();
+                this.hideButtonCenter();
                 tvUserManager.setTextColor(Color.parseColor("#08c29d"));
                 break;
             case 2:
+                this.setActionBarTitle("设置");
+                this.hideButtonBack();
+                this.hideButtonRight();
+                this.hideButtonCenter();
                 tvSetting.setTextColor(Color.parseColor("#08c29d"));
                 break;
 
@@ -210,6 +239,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         tvFace.setTextColor(Color.parseColor("#7a7b83"));
         tvUserManager.setTextColor(Color.parseColor("#7a7b83"));
         tvSetting.setTextColor(Color.parseColor("#7a7b83"));
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
 

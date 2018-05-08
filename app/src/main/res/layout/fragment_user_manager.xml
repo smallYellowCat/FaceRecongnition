@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <TextView android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:text="暂无数据"
+              android:id="@+id/tv"
+              android:textSize="24sp"
+              android:textColor="#02f19d"
+              android:visibility="invisible"
+              android:gravity="center_horizontal|center_vertical"
+    />
 
-</LinearLayout>
+    <ListView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/list"
+              android:layout_margin="16dp"
+    />
+
+</RelativeLayout>

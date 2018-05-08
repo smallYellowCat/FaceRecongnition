@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import com.doudou.facerecongnition.entity.User;
 import com.iflytek.cloud.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,11 +64,11 @@ public class XFUtil {
     };
 
 
-    /**
+   /* *//**
      * register face information
      * @param user 待注册用户
      * @return 成功：true， 失败：false
-     */
+     *//*
     public  boolean enroll(User user){
         boolean result = false;
 
@@ -91,7 +90,7 @@ public class XFUtil {
         return result;
     }
 
-
+*/
 
     /**
      * 人脸验证监听器

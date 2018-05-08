@@ -10,7 +10,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -18,12 +20,11 @@ android {
         }
     }
 
-    sourceSets{
-        main{
+    sourceSets {
+        main {
             jniLibs.srcDirs = ['libs']
         }
     }
-
 
 
 }
@@ -37,5 +38,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.alibaba:fastjson:1.2.44'
     compile 'org.projectlombok:lombok:1.16.20'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    compile 'im.amomo.volley:okvolley:1.1.8'
+
+
     testCompile 'junit:junit:4.12'
 }

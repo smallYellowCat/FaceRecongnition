@@ -23,8 +23,8 @@
                 android:src="@drawable/login_user_normal"/>
 
         <EditText
-                android:id="@+id/etUserName"
-                android:hint="用户名"
+                android:id="@+id/etUserAccount"
+                android:hint="用户名,至少6位"
                 android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
                 android:maxLength="16"
                 android:inputType="text"
@@ -52,7 +52,7 @@
                 android:src="@drawable/name"/>
 
         <EditText
-                android:id="@+id/etFullName"
+                android:id="@+id/etTrueName"
                 android:hint="真实姓名"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -153,7 +153,7 @@
 
         <EditText
                 android:hint="邀请码，4位"
-                android:id="@+id/etTeamName"
+                android:id="@+id/etInviteCode"
                 android:maxLength="16"
                 android:inputType="text"
                 android:layout_width="match_parent"

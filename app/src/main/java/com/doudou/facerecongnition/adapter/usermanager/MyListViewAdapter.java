@@ -1,4 +1,4 @@
-package com.doudou.facerecongnition.adapter;
+package com.doudou.facerecongnition.adapter.usermanager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.doudou.facerecongnition.R;
-import com.doudou.facerecongnition.entity.KeTang;
+import com.doudou.facerecongnition.entity.Course;
+import com.doudou.facerecongnition.util.DateUtil;
 
 import java.util.List;
 
@@ -17,10 +18,10 @@ import java.util.List;
 *时间:
 */
 public class MyListViewAdapter extends BaseAdapter {
-    private List<KeTang> list;
+    private List<Course> list;
     private Context context;
 
-    public MyListViewAdapter(List<KeTang> list, Context context){
+    public MyListViewAdapter(List<Course> list, Context context){
         this.context = context;
         this.list = list;
     }
@@ -57,14 +58,16 @@ public class MyListViewAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.KT_Name.setText(list.get(position).getKTName());
-        viewHolder.startTime.setText("开始时间：" + list.get(position).getStartTime());
-        viewHolder.endTime.setText("结束时间：" + list.get(position).getEndTime());
+        viewHolder.KT_Name.setText(list.get(position).getCourseName());
+        viewHolder.startTime.setText("开始时间：" + DateUtil.timestampToString(list.get(position).getBeginTime().getTime()).substring(5, 10));
+        viewHolder.endTime.setText("结束时间：" + DateUtil.timestampToString(list.get(position).getEndTime().getTime()).substring(5, 10));
 
         viewHolder.detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                switch (v.getId()){
 
+                }
             }
         });
         return convertView;

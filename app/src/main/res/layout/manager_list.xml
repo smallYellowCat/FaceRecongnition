@@ -40,7 +40,7 @@
               android:layout_height="wrap_content"
               android:id="@+id/startTime"
               android:layout_below="@id/KTName"
-              android:layout_marginLeft="36dp"
+              android:layout_marginLeft="0dp"
 
     />
     <TextView android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
               android:id="@+id/endTime"
               android:layout_below="@id/KTName"
               android:layout_alignParentRight="true"
-              android:layout_marginRight="36dp"
+              android:layout_marginRight="0dp"
 
     />
 

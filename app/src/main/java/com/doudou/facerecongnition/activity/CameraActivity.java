@@ -19,7 +19,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.doudou.facerecongnition.R;
-import com.doudou.facerecongnition.entity.User;
 import com.doudou.facerecongnition.util.Base64Util;
 import com.doudou.facerecongnition.util.CameraPreview;
 import com.doudou.facerecongnition.util.MyCamera;
@@ -29,7 +28,7 @@ import com.iflytek.cloud.*;
 import java.io.ByteArrayOutputStream;
 
 
-public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
+public class CameraActivity extends BaseActivity implements View.OnClickListener {
 
     private Camera mCamera;
     private CameraPreview mPreview;
@@ -37,7 +36,6 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     private ImageView imageView;
     private Button bt;
     private XFUtil xfUtil;
-    private User user = new User();
     /**身份验证对象*/
     private static  IdentityVerifier mIdVerifier;
     private final String TAG = "CameraActivity.class";
@@ -47,6 +45,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        initActionBar();
         Setting.setShowLog(true);
 
         imageView = (ImageView) findViewById(R.id.iv);
@@ -150,12 +149,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         //*******显示一下
         imageView.setImageBitmap(nbmp2);
 
-        //**注册*/
-        user.setImageData(Base64Util.bitmapToBytes(nbmp2));
-        user.setAuthId("123457");
-        if (flag && user.getImageData().length > 10){
-            //enroll(user);
-        }
+
 
     }
 

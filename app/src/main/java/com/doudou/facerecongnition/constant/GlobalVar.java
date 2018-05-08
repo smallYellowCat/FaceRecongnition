@@ -7,7 +7,7 @@ package com.doudou.facerecongnition.constant;
 */
 public class GlobalVar {
     /**后台管理服务地址*/
-    public static final String myServer = "101.132.147.167";
+    public static final String myServer = "http://101.132.147.167:8080/frss";
     /**讯飞人脸识别应用的appId*/
     public String appId = "=5a6d4848";
 

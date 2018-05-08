@@ -3,15 +3,12 @@ package com.doudou.facerecongnition.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Setter
 @Getter
-public class User {
-
+public class Student {
     private int id;
-    private String authId;
+    private int number;
     private String name;
-    private String image_url;
-    private byte[] imageData;
-
+    private String imagePath;
+    private String face_token;
 }
